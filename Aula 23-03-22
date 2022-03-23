@@ -1,0 +1,6 @@
+idade = int(input("Insira a sua idade"))
+if idade >= 18: 
+ print("Parabéns, você já pode ter carteira de motorista")
+ 
+if idade <= 17:
+    print("Você ainda não completou 18 anos.")
