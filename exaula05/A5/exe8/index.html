@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        tr{
+            margin: 5px;
+        }
+        td{
+            background-color: #c0defa;
+            width: 100px;
+        }
+        th{
+            background-color: #5b9bd5;
+        }
+        td, th{
+            padding: 5px;
+        }
+        input{
+            text-align: center;
+        }
+    </style>
+    <script>
+        //calcule o imposto de renda usando a tabela do exercício 5
+        function calcular(){
+            var salario = parseInt(document.getElementById("salario").value);
+            console.log(salario);
+            var imposto = 0;
+            if(salario <= 1434){
+                imposto = 0;
+            }else if(salario >= 1434 && salario <= 2150){
+                imposto = salario * 0.075;
+            }else if(salario >= 2150 && salario <= 2866){
+                imposto = salario * 0.15;
+            }else if(salario >= 2866 && salario <= 3582 ){
+                imposto = salario * 0.225;
+            }else if(salario > 3582){
+                imposto = salario * 0.275;
+            }
+            document.getElementById("imposto").value = `R$ ${imposto.toFixed(2)}`;
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <h2>Calculo do Imposto de Renda</h2>
+        <p>Registro: <input type="text" id="regis"></p>
+        <p>Nome: <input type="text" id="nome"></p>
+        <p>Salario: <input type="text" id="salario" oninput="calcular()"></p>
+        <p>Imposto: <input type="text" id="imposto" readonly></p>
+    </form>
+</body>
+</html>

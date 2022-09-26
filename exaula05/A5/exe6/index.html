@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        tr{
+            margin: 5px;
+        }
+        td{
+            background-color: #c0defa;
+            width: 220px;
+        }
+        th{
+            background-color: #5b9bd5;
+        }
+        td, th{
+            padding: 5px;
+        }
+
+    </style>
+    <script>
+        function calcular(){
+            var valor = parseFloat(document.getElementById("valor").value);
+
+            if(valor != "" && isNaN(valor) == false){
+                document.getElementById("P1").textContent = `R$ ${(valor-(valor*.1)).toFixed(2)}`;
+                document.getElementById("P2").textContent = `R$ ${(valor-(valor*.05)).toFixed(2)}`;
+                document.getElementById("P3").textContent = `R$ ${(valor*1.1).toFixed(2)}`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <main>
+        <h2>Insira o valor da sua compra</h1>
+        <input type="text" oninput="calcular()" id="valor">
+        <table id="jurustb">
+            <tr>
+                <th>Código</th>
+                <th>Condições de pagamento</th>
+                <th>Preço</th>
+            </tr>
+            <tr>
+                <th>1</th>
+                <td>À vista 10% de desconto</td>
+                <td id="P1"></td>
+            </tr>
+            <tr>
+                <th>2</th>
+                <td>Cartão 5% de desconto</td>
+                <td id="P2"></td>
+            </tr>
+            <tr>
+                <th>3</th>
+                <td>Parcelado 10% de aumento</td>
+                <td id="P3"></td>
+            </tr>
+        </table>
+    </main>
+</body>
+</html>

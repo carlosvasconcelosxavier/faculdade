@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        tr{
+            margin: 5px;
+        }
+        td{
+            background-color: #c0defa;
+            width: 100px;
+        }
+        th{
+            background-color: #5b9bd5;
+        }
+        td, th{
+            padding: 5px;
+        }
+        input{
+            text-align: center;
+        }
+
+    </style>
+    <script>
+        function calcular(){
+            
+
+            var nota1 = parseInt(document.getElementById("nota1").value);
+            var nota2 = parseInt(document.getElementById("nota2").value);
+            var nota3 = parseInt(document.getElementById("nota3").value);
+
+            if( isNaN(nota1) == false && isNaN(nota2) == false && isNaN(nota3) == false){
+                
+                document.getElementById("N1").textContent = `${nota1}`;
+                document.getElementById("N2").textContent = `${nota2}`;
+                document.getElementById("N3").textContent = `${nota3}`;
+                
+                document.getElementById("C1").textContent = `${nota1 >= 6 ? "Aprovado" : nota1 < 3 ? "Reprovado" : "Recuperação"}`;
+                document.getElementById("C2").textContent = `${nota2 >= 6 ? "Aprovado" : nota2 < 3 ? "Reprovado" : "Recuperação"}`;
+                document.getElementById("C3").textContent = `${nota3 >= 6 ? "Aprovado" : nota3 < 3 ? "Reprovado" : "Recuperação"}`;
+            }else{
+                document.getElementById("output").value = 'Insira um número';
+            }
+        }
+    </script>
+</head>
+<body>
+    <main>
+        <h2>Insira as notas</h1>
+        <p>nota 1</p>
+        <input type="text" oninput="calcular()" id="nota1">
+        <p>nota 2</p>
+        <input type="text" oninput="calcular()" id="nota2">
+        <p>nota 3</p>
+        <input type="text" oninput="calcular()" id="nota3">
+        <table id="jurustb">
+            <tr>
+                <th colspan="2">Situação</th>
+                <th>Conceito</th>
+                <th>Nota</th>
+            </tr>
+            <tr>
+                <th>>= 6</th>
+                <th>Aprovado</th>
+                <td id="C1"></td>
+                <td id="N1"></td>
+            </tr>
+            <tr>
+                <th>>= 3 E < 6</th>
+                <th>Recuperação</th>
+                <td id="C2"></td>
+                <td id="N2"></td>
+            </tr>
+            <tr>
+                <th>< 3 </th>
+                <th>Reprovado</th>
+                <td id="C3"></td>
+                <td id="N3"></td>
+            </tr>
+        </table>
+    </main>
+</body>
+</html>

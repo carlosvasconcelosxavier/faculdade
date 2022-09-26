@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-flow: column;
+            font-family: sans-serif;
+        }
+        main{
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+        }
+        input{
+            margin: 15px;
+        }
+        p{
+            margin: 0px;
+        }
+    </style>
+    <script>
+        function coisa(){
+            var num1 = parseInt(document.getElementById("input1").value);
+            var num2 = parseInt(document.getElementById("input2").value);
+
+            if(num1 != "" && num2 != "" && isNaN(num1) == false && isNaN(num2) == false){
+                if(num1 > num2){
+                    document.getElementById("output").value = `${num1} é maior que ${num2}`;
+                }else if(num2 > num1){
+                    document.getElementById("output").value = `${num2} é maior que ${num1}`;
+                }else{
+                    document.getElementById("output").value = `Os dois são iguais`;
+                }
+            }else{
+                document.getElementById("output").value = 'Insira um número';
+            }
+        }
+    </script>
+</head>
+<body>
+    <main>
+        <h1>O numero é par ou impar ?</h1>
+        <p>Insira o primeiro numero</p>
+        <input type="text" id="input1" oninput="coisa()">
+        <p>Insira o segundo numero</p>
+        <input type="text" id="input2" oninput="coisa()">
+        <p>Resultado</p>
+        <input type="text" readonly id="output">
+    </main>
+</body>
+</html>

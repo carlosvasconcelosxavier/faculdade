@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-flow: column;
+            font-family: sans-serif;
+        }
+        main{
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+        }
+        input{
+            margin: 15px;
+        }
+    </style>
+    <script>
+        function coisa(){
+            var num = parseInt(document.getElementById("input").value);
+
+            var type = typeof 10;
+
+            if(num != "" && isNaN(num) == false){
+                document.getElementById("output").value = `${num%2 == 0 ? "par" : "ímpar"}`;
+            }else{
+                document.getElementById("output").value = 'Insira um número';
+            }
+        }
+    </script>
+</head>
+<body>
+    <main>
+        <h1>O numero é par ou impar ?</h1>
+        <input type="text" id="input" oninput="coisa()">
+        <input type="text" readonly id="output">
+    </main>
+</body>
+</html>

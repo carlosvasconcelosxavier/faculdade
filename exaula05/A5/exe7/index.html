@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        tr{
+            margin: 5px;
+        }
+        td{
+            background-color: #c0defa;
+            width: 220px;
+        }
+        th{
+            background-color: #5b9bd5;
+        }
+        td, th{
+            padding: 5px;
+        }
+
+    </style>
+    <script>
+        function calcular(){
+            //copilot calcule a imc de uma pessoa e classifique de acordo com a tabela
+            var peso = parseFloat(document.getElementById("peso").value);
+            var altura = parseFloat(document.getElementById("altura").value);
+            var imc = peso / (altura * altura);
+            document.getElementById("imc").textContent = `Seu imc: ${imc.toFixed(2)}`;
+            document.getElementById("classificacao").textContent = `${imc < 18.5 ? "Abaixo do peso" : imc >= 18.5 && imc <= 24.9 ? "Peso normal" : imc >= 25 && imc <= 29.9 ? "Sobrepeso" : imc >= 30 && imc <= 34.9 ? "Obesidade grau 1" : imc >= 35 && imc <= 39.9 ? "Obesidade grau 2" : "Obesidade grau 3"}`;
+        }
+    </script>
+</head>
+<body>
+    <main>
+        <h2>Insira o seu peso e</h1>
+
+        <input type="text" oninput="calcular()" id="peso" placeholder="peso">
+        <input type="text" oninput="calcular()" id="altura" placeholder="altura">
+        <table id="jurustb">
+            <tr>
+                <th>Condição</th>
+                <th>IMC em Mulheres</th>
+                <th>IMC em Homens</th>
+            </tr>
+            <tr>
+                <th>abaixo do peso</th>
+                <td>< 19,1 </td>
+                <td>< 20,7 </td>
+            </tr>
+            <tr>
+                <th>no peso normal</th>
+                <td>19,1 - 25,8</td>
+                <td>20,7 - 26,4</td>
+            </tr>
+            <tr>
+                <th>marginalmente acima do peso </th>
+                <td>25,8 - 27,3</td>
+                <td>26,4 - 27,8</td>
+            </tr>
+            <tr>
+                <th>acima do peso ideal</th>
+                <td>27,3 - 32,3</td>
+                <td>27,8 - 31,1</td>
+            </tr>
+            <tr>
+                <th>Obeso</th>
+                <td>> 32,3 </td>
+                <td>> 31,1 </td>
+            </tr>
+            
+            <p id="imc"></p>
+            <p>Sua Situação é</p>
+            <h2 id="classificacao"></h2>
+        </table>
+    </main>
+</body>
+</html>

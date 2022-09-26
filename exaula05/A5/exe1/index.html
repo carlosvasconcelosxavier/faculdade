@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        tr{
+            margin: 5px;
+        }
+        td{
+            background-color: #c0defa
+        }
+        th{
+            background-color: #5b9bd5;
+        }
+        td, th{
+            padding: 5px;
+        }
+
+    </style>
+    <script>
+        function calcular(){
+            var valor = parseFloat(document.getElementById("valor").value);
+
+            if(valor != NaN){
+                document.getElementById("J0").textContent = `R$ ${valor}`;
+                document.getElementById("J0T").textContent = `R$ ${valor}`;
+                document.getElementById("J0P").textContent = `R$ ${valor - valor}`;
+
+                document.getElementById("J3").textContent = `R$ ${parseFloat((valor*1.03).toFixed(2))}`;
+                document.getElementById("J3T").textContent = `R$ ${parseFloat(((valor*1.03)/2).toFixed(2))}`;
+                document.getElementById("J3P").textContent = `R$ ${parseFloat((valor*1.03-valor).toFixed(2))}`;
+            
+                document.getElementById("J7").textContent = `R$ ${parseFloat((valor*1.07).toFixed(2))}`;
+                document.getElementById("J7T").textContent = `R$ ${parseFloat(((valor*1.07)/7).toFixed(2))}`;
+                document.getElementById("J7P").textContent = `R$ ${parseFloat((valor*1.07-valor).toFixed(2))}`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <main>
+        <h2>Insira o valor da sua compra</h1>
+        <input type="text" oninput="calcular()" id="valor">
+        <table id="jurustb">
+            <tr>
+                <th>N° Parcelas</th>
+                <th>% de juros</th>
+                <th>Total</th>
+                <th>Juros</th>
+                <th>Parcelas</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td id="J0"></td>
+                <td id="J0P"></td>
+                <td id="J0T"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>3</td>
+                <td id="J3"></td>
+                <td id="J3P"></td>
+                <td id="J3T"></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>7</td>
+                <td id="J7"></td>
+                <td id="J7P"></td>
+                <td id="J7T"></td>
+            </tr>
+        </table>
+    </main>
+</body>
+</html>

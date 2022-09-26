@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-flow: column;
+            font-family: sans-serif;
+        }
+        main{
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+        }
+        input{
+            margin: 15px;
+        }
+        p{
+            margin: 0px;
+        }
+        #blank{
+            background-color: green;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+        function coisa(){
+            var alt = parseInt(document.getElementById("input1").value);
+            var base = parseInt(document.getElementById("input2").value);
+
+            if(alt != "" && base != "" && isNaN(alt) == false && isNaN(base) == false){
+                document.getElementById("blank").style.height = `${alt}px`;
+                document.getElementById("blank").style.width = `${base}px`;
+
+                document.getElementById("output").value = `${alt} x ${base} = ${alt * base}px²`;
+            }else{
+                document.getElementById("output").value = 'Insira um número';
+            }
+        }
+    </script>
+</head>
+<body>
+    <main>
+        <h1>Area do retangulo ?</h1>
+        <p>Insira a altura em px</p>
+        <input type="text" id="input1" oninput="coisa()">
+        <p>Insira a base em px</p>
+        <input type="text" id="input2" oninput="coisa()">
+        <p>Resultado</p>
+        <input type="text" readonly id="output">
+        <div id="blank"></div>
+    </main>
+</body>
+</html>

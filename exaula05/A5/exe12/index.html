@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-family: sans-serif;
+        }
+        tr{
+            margin: 5px;
+        }
+        td{
+            background-color: #c0defa;
+            width: 100px;
+        }
+        th{
+            background-color: #5b9bd5;
+        }
+        td, th{
+            padding: 5px;
+        }
+        input{
+            text-align: center;
+        }
+    </style>
+    <script>
+        var numSort = Math.round(Math.random()*100);
+        function calcular(){
+            var n1 = parseInt(document.getElementById("input").value)
+
+            console.log(numSort);
+
+            if(n1 != "" && n1 != null){             
+                document.getElementById("output").innerHTML = n1 > numSort ?`<p id="output">O seu numero é maior: <input type="text" id="input"></p>`:
+                n1 < numSort ? `<p id="output">O seu numero é menor: <input type="text" id="input"></p>`:
+                `<p id="output">PARABENS!!!! VOCE ACERTOU CLIQUE ---><button onclick="document.location.reload(true);">Reniciar</button><--- PARA RENICIAR</p>`;
+            };
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h3>Um numero foi sorteador de 0 a 100</h3>
+        <p id="output">Chute um numero aqui: <input type="text" id="input"></p>
+        <button onclick="calcular()">Tentar</button>
+    </div>
+</body>
+</html>
