@@ -1,0 +1,44 @@
+* {
+	margin: 0px; 
+	padding: 0px; 
+	
+}
+.tabela{
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 250px;
+    background-color: aliceblue;
+}
+.cinzaEscuro{
+    background-color: grey;
+    border-top: 2px solid rgb(76, 76, 76);
+    align-items: center;
+    width: 60px;
+}
+.verde{
+    background-color: green;
+    border-top: 2px solid rgb(2, 60, 2);
+    align-items: center;
+    width: 60px;
+    text-align: center;
+}
+.azul{
+    background-color: blue;
+    border-top: 2px solid rgb(8, 8, 117);
+    align-items: center;
+    width: 60px;
+}
+.roxo{
+    background-color: blueviolet;
+    border-top: 2px solid rgb(35, 4, 64);
+    align-items: center;
+    width: 60px;
+}
+.laranja{
+    background-color: coral;
+    border-top: 2px solid rgb(132, 35, 0);
+    align-items: center;
+    width: 60px;
+    
+}

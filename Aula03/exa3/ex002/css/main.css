@@ -1,0 +1,107 @@
+html, body{
+  width: 100%;
+  height: 100%;
+}
+
+* {
+	margin: 0px; 
+	padding: 0px; 
+	box-sizing: border-box;
+}
+
+input,textarea {
+	outline: none;
+	border: none;
+}
+
+button {
+  /* retire a borda do elemento */ 
+  border: none;
+}
+
+body {
+  padding: 15px;
+  /* insira o gradiente de fundo com as cores #0d0e0e, #b0ff98*/ 
+  
+}
+.descricao{
+  text-align: center;
+  padding-bottom: 30px;
+  border-bottom: 0.4px solid #000000;
+}
+
+form {
+  
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* largura da caixa deve ser 400px */
+  width: 400px;
+  /* altura da caixa deve ser 400px */
+  height: 400px;
+  /* cor de fundo branco */
+  background-color: rgb(118, 80, 39);
+  /* arredondar os cantos superiores esquerdo/direito e inferior esquerdo com 150px, demais 0px */
+  border-radius: 30px;
+  /* centralizar a caixa */
+  justify-content: center;
+  text-align: center;
+  
+  /* espaçamento do conteúdo para as bordas de 30px */
+  padding: 30px;
+  /* adicionar sombra na caixa do formulário */
+  box-shadow: 10px 5px 5px black;
+  margin: auto;
+}
+
+.title {
+  text-align: center;
+  padding-bottom: 44px;
+}
+
+.entrada {
+  padding: 0 30px;
+  margin-bottom: 20px;
+  width: 100%;
+  background: #c1ffec;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #666666;
+  /* altura de 30px para o campo input */
+  height: 30px;
+  /* canto arredondado de 25px */  
+  border-radius: 25px;
+}
+
+.campotexto {
+  /* altura de 100px para o campo textarea */
+  height: 100px;
+}
+
+.btn {
+  /* largura de 193px para o botão */
+  width: 193px;
+  /* altura de 50px para o botão */
+  height: 50px;
+  /* canto arredondado de 25px */
+  border-radius: 25px;
+  /* centralizar a caixa */
+  justify-content: center;
+  /* configurar a visualização para bloco */
+  display: inline-block;
+  
+  /* cor de fundo #ffbe0d */
+  background: #ffbe0d;
+  /* fonte com tamanho 15px */
+  font-size: 15px;
+  /* espaçamento para as bordas de 25px */
+  padding: 0 25px;
+}
+
+.btn:hover {
+  background: #333333;
+  color: #fff;
+  cursor: pointer;
+}

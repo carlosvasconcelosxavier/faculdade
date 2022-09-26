@@ -1,0 +1,42 @@
+.carta{
+    width: 300px;
+    border: 1px solid #000;
+    box-shadow: 0 0 6px #000;
+    border-radius: 20px 20px 0 0;
+    margin: 10px;
+}
+
+.carta img{
+    width: 100%;
+    height: 200px;
+    border-radius: 20px 20px 0 0;
+
+}
+
+#cards{
+    display: flex;
+    flex-wrap: wrap; /*para quebrar linhas e repetir na linha abaixo*/
+}
+
+.carta a{
+    background-color: rgb(55, 193, 235);
+    border-radius: 15px 15px 15px 0;
+    display: block;
+    padding: 20px;
+    font-size: 16pt;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 1px 1px 10px rgb(0, 0, 0);
+    color: #000;
+    box-shadow: 1px 1px 12px #000;
+
+}
+.carta h1{
+    text-align: center;
+}
+
+.carta a:hover{
+    color: aliceblue;
+    background-color: rgb(128, 195, 240);
+}
